@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro | Wherevent</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="default.css">
+	<link href="estilo.css" type="text/css" rel="stylesheet" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="mapa.js"></script>
+    <script type="text/javascript" src="jquery-ui.custom.min.js"></script>
+</head>
+    
+    
+<body>
+    <div id="header-wrapper">
+          <div id="header" class="container">
+            <div id="logo">
+			<a href="index.html"><img src="images/LOGO%20WHEREVENT.png"></a>
+            </div>
+          </div>
+        </div> 
+    
+    <form class="form-horizontal col-md-10">
+      
+    <fieldset>
+    <!-- Form Name -->
+    <legend>Cadastre seu evento</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="textinput">Nome</label>  
+      <div class="col-md-4">
+      <input id="textinput" name="nome" type="text" placeholder="" class="form-control input-md" required="">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="Data">Data</label>  
+      <div class="col-md-4">
+      <input id="Data" name="data" type="date" placeholder="" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="textinput">Local</label>  
+      <div class="col-md-4">
+      <input id="textinput" name="local" type="text" placeholder="" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="Data">Duração</label>  
+      <div class="col-md-4">
+      <input id="Data" name="duracao" type="time" placeholder="dia/mês/ano" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="textinput">Descrição</label>  
+      <div class="col-md-4">
+      <input id="Data" name="descricao" type="text" placeholder="" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="textinput">Tipo de evento</label>  
+      <div class="col-md-4">
+      <input id="Data" name="tipo_evento" type="text" placeholder="" class="form-control input-md">
+
+      </div>
+    </div>    
+
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="textinput">Faixa Etária</label>  
+      <div class="col-md-4">
+      <input id="Data" name="faixa_etaria" type="number" placeholder="" class="form-control input-md">
+
+      </div>
+    </div>    
+
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="Data">Valor</label>  
+      <div class="col-md-4">
+      <input id="Data" name="Data" type="number" placeholder="" class="form-control input-md">
+
+      </div>
+    </div>  
+  <input type="hidden" id="txtLatitude" name="txtLatitude" />
+	<input type="hidden" id="txtLongitude" name="txtLongitude" />
+	<input type="hidden" id="txtEnderecoinput" name="txtEndereço" />
+	<input type="submit">
+	</form>
+	</fieldset>
+		<div id="wrapper">
+			<div id="apresentacao">
+				<fieldset>  
+					<div class="campos">
+						<label for="txtEndereco">Endereço:</label>
+						<input type="text" id="txtEndereco" name="txtEndereco" />
+						<input type="button" id="btnEndereco" name="btnEndereco" value="Mostrar no mapa" />
+					</div>
+					<div id="mapa"></div>
+				</fieldset>
+			</div>
+		</div>
+</body>
+</html>
