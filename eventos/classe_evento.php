@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class Evento
 {
 
@@ -17,7 +17,7 @@ class Evento
 		$id = $final->id + 1;
 		
 		//Criando um array com os dados do Input e tranformando-o em objeto para JSON
-		$dadosCadastro_evento= array("id"=>$id, "nome"=>$nome, "data"=>$data, "local"=>$local,"lng"=>$lng, "lat"=>$lat, "duracao"=>$duracao, "descricao"=>$descricao, "tipo_evento"=>$tipo_evento, "valor_evento"=>$valor_evento,"hr_inicio"=>$hr_inicio, "hr_fim"=>$hr_fim );
+		$dadosCadastro_evento= array("id"=>$id, "nome"=>$nome, "data"=>$data, "local"=>$local,"lng"=>$lng, "lat"=>$lat, "descricao"=>$descricao, "tipo_evento"=>$tipo_evento, "valor_evento"=>$valor_evento,"hr_inicio"=>$hr_inicio, "hr_fim"=>$hr_fim );
 
 		
 

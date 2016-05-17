@@ -1,9 +1,28 @@
 ﻿var geocoder;
 var map;
 var marker;
+var eventos;
+
+function get_eventos() {
+	
+	var xmlhttp = new XMLHttpRequest();
+	var url = "get_eventos.php";
+
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			eventos = JSON.parse(xmlhttp.responseText);
+			initialize();
+		}
+	};
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+	
+}
 
 function initialize() {
-    var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
+	
+	
+    var latlng = new google.maps.LatLng(eventos[1].lat , eventos[1].lng );
     var options = {
         zoom: 5,
         center: latlng,
@@ -14,17 +33,28 @@ function initialize() {
 
     geocoder = new google.maps.Geocoder();
 
-    marker = new google.maps.Marker({
-        map: map,
-        draggable: true,
-    });
-
-    marker.setPosition(latlng);
+	var i;
+	for(i = 0;i<eventos.length;i++) {
+		
+		latlng = new google.maps.LatLng(eventos[i].lat , eventos[i].lng );
+		marker = new google.maps.Marker({
+			map: map,
+			id : i
+		});
+		marker.setPosition(latlng);
+		
+		var infowindow = new google.maps.InfoWindow({
+			content: 'Data: ' + eventos[i].data +
+			'<br>Inicio: ' + eventos[i].hr_inicio
+		});
+		infowindow.open(map,marker);
+	}
 }
 
 $(document).ready(function () {
 
-    initialize();
+	
+	get_eventos();
 
     function carregarNoMapa(endereco) {
         geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, function (results, status) {
@@ -34,12 +64,8 @@ $(document).ready(function () {
                     var longitude = results[0].geometry.location.lng();
 
                     $('#txtEndereco').val(results[0].formatted_address);
-                    $('#txtEnderecoinput').val(results[0].formatted_address);
-                    $('#txtLatitude').val(latitude);
-                    $('#txtLongitude').val(longitude);
 
                     var location = new google.maps.LatLng(latitude, longitude);
-                    marker.setPosition(location);
                     map.setCenter(location);
                     map.setZoom(16);
                 }
@@ -56,19 +82,6 @@ $(document).ready(function () {
         if ($(this).val() != "")
             carregarNoMapa($(this).val());
     })
-
-    google.maps.event.addListener(marker, 'drag', function () {
-        geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                if (results[0]) {
-                    $('#txtEndereco').val(results[0].formatted_address);
-                    $('#txtEnderecoinput').val(results[0].formatted_address);
-                    $('#txtLatitude').val(marker.getPosition().lat());
-                    $('#txtLongitude').val(marker.getPosition().lng());
-                }
-            }
-        });
-    });
 
     $("#txtEndereco").autocomplete({
         source: function (request, response) {
@@ -92,16 +105,4 @@ $(document).ready(function () {
             map.setZoom(16);
         }
     });
-
-    /*$("form").submit(function(event) {
-		event.preventDefault();
-		
-		var endereco = $("#txtEndereco").val();
-		var latitude = $("#txtLatitude").val();
-		var longitude = $("#txtLongitude").val();
-		
-		alert("Endereço: " + endereco + "\nLatitude: " + latitude + "\nLongitude: " + longitude);
-	});
-	*/
-
 });
