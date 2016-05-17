@@ -46,13 +46,13 @@ if(isset($_POST['nome']))
 			</div>
 			<div id="menu">
 				<ul>
-					<li><a href="cadastro.html">CADASTRE-SE</a></li>
+					<li><a href="formulario-evento.html">Cadastre seu evento</a></li>
 					<!--<li><a href="#" accesskey="3" title="" class="icon icon-key">LOGIN</a></li>-->
 				</ul>
 			</div>
 		</div>
     </div>
-    <div id="heade-featured"> </div>
+    <div id="line-blank"> </div>
 
     <div id="mid">  
 		<h2>Cadastro Realizado com sucesso</h2>
