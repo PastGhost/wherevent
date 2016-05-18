@@ -9,13 +9,12 @@ if(isset($_POST['nome']))
 	$lng = $_POST['txtLongitude'];
 	$descricao = $_POST['descricao'];
 	$tipo_evento = $_POST['tipo_evento'];
-	$valor_evento = $_POST['valor_evento'];
 	$hr_inicio = $_POST['hr_inicio'];
 	$hr_fim = $_POST['hr_fim'];
 	
 	$include = include('classe_evento.php');
 	$evento = new Evento();
-	$cadastrar_evento = $evento->cadastrar_evento($nome, $data, $local, $lng, $lat, $descricao, $tipo_evento, $valor_evento, $hr_inicio,$hr_fim);
+	$cadastrar_evento = $evento->cadastrar_evento($nome, $data, $local, $lng, $lat, $descricao, $tipo_evento, $hr_inicio,$hr_fim);
 	
 }
 

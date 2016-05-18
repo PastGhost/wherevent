@@ -3,7 +3,7 @@ class Evento
 {
 
 
-	function cadastrar_evento($nome, $data, $local, $lng, $lat, $descricao, $tipo_evento, $valor_evento, $hr_inicio,$hr_fim)
+	function cadastrar_evento($nome, $data, $local, $lng, $lat, $descricao, $tipo_evento, $hr_inicio,$hr_fim)
 	{
 
 		//Lendo arquivo Json

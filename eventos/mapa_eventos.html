@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Mapa | Wherevent</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+	
+	<link href="new_estilo.css"rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" >
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" type="text/css" rel="stylesheet" >
+	
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="mapa_mostrar_eventos.js"></script>
+</head>
+
+<body>
+    <div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+            <a href="index.html"><img src="../images/LOGO%20WHEREVENT.png"></a>
+			</div>
+			<div id="menu">
+				<ul>
+					<li><a href="formulario-evento.html">Cadastre seu evento</a></li>
+					<!--<li><a href="#" accesskey="3" title="" class="icon icon-key">LOGIN</a></li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="mapa"></div>
+	<div id="info">
+		<div id="info_placeholder">
+		<p>Clique em um evento para exibir suas informações</p>
+		</div>
+		<div id="evento_info">
+			<p>Nome do evento:<span id="nome_evento"></span></p>
+			<p>Dia do evento<span id="data_evento"></span></p>
+			<p>Início: <span id="hr_ini_evento"></span> Fim: <span id="hr_fim_evento"></span></p>
+			<p>Local do evento:<span id="local_evento"></span></p>
+			<p>Tipo de evento:<span id="tipo_evento"></span></p>
+			<p>Descrição:<span id="descricao_evento"></span></p>
+		</div>
+	</div>
+	
+	
+</body>
