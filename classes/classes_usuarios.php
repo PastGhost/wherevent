@@ -15,7 +15,7 @@ class User
 		$this->email = $email;
 		$this->password = $password;
 		
-		$fileJson = file_get_contents('../dados_json/user.json');
+		$fileJson = file_get_contents('../../../dados_json/user.json');
 
 		//Transformando Json em PHP
 		$filePhp = json_decode($fileJson);
@@ -33,7 +33,7 @@ class User
 		array_push($filePhp, $dadosCadastro);
 
 		//Escrevendo o array dos dados do usuário no arquivo Json
-		$writeFile = file_put_contents('../dados_json/user.json', json_encode($filePhp));
+		file_put_contents('../../../dados_json/user.json', json_encode($filePhp));
 
 		return $this->id_user;
 	}
@@ -51,7 +51,7 @@ class Promotor
 
 
 		//Lendo arquivo Json
-		$fileJson = file_get_contents('../promotor.json');
+		$fileJson = file_get_contents('../../../dados_json/promotor.json');
 
 		//Transformando Json em PHP
 		$filePhp = json_decode($fileJson);
@@ -68,7 +68,7 @@ class Promotor
 		array_push($filePhp, $dadosCadastro);
 
 		//Escrevendo o array dos dados do usuário no arquivo Json
-		$writeFile = file_put_contents('../dados_json/promotor.json', json_encode($filePhp));
+		$writeFile = file_put_contents('../../../dados_json/promotor.json', json_encode($filePhp));
 	}
 }
 
