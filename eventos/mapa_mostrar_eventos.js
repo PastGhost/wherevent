@@ -2,58 +2,38 @@ var geocoder;
 var map;
 var eventos;
 
-function get_eventos() {
-	
-	var xmlhttp = new XMLHttpRequest();
-	var url = "get_eventos.php";
 
-	xmlhttp.onreadystatechange = function() {
-		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			eventos = JSON.parse(xmlhttp.responseText);
-			initialize();
-		}
-	};
-	xmlhttp.open("GET", url, true);
-	xmlhttp.send();
-	
-}
-
-function abrir_info (id) {
+function abrir_info (evento) {
 	$("#info_placeholder").css("display","none");
 	$("#evento_info").css("display","block");
-	$("#nome_evento").text( id.nome );
-	$("#data_evento").text( id.data );
-	$("#hr_ini_evento").text( id.hr_inicio );
-	$("#hr_fim_evento").text( id.hr_fim );
-	$("#local_evento").text( id.local );
-	$("#tipo_evento").text( id.tipo_evento );
-	$("#descricao_evento").text( id.descricao );
+	$("#nome_evento").text( evento.nome );
+	$("#data_evento").text( evento.data );
+	$("#hr_ini_evento").text( evento.hr_inicio );
+	$("#hr_fim_evento").text( evento.hr_fim );
+	$("#local_evento").text( evento.local );
+	$("#tipo_evento").text( evento.tipo_evento );
+	$("#descricao_evento").text( evento.descricao );
 }
 
-function addmarkers(map) {
-	var i;
-	for(i = 0;i<eventos.length;i++) {
-		
-		var latlng = new google.maps.LatLng(eventos[i].lat , eventos[i].lng );
+function addmarker (evento) {
+	
+	var latlng = new google.maps.LatLng(evento.lat , evento.lng );
 		var marker = new google.maps.Marker({
 			map: map,
 		});
 		marker.setPosition(latlng);
 		
-		marker.evento_info = eventos[i];
+		marker.evento_info = evento;
 		
 		var infowindow = new google.maps.InfoWindow({
-			content: 'Data: ' + eventos[i].data +
-			'<br>Inicio: ' + eventos[i].hr_inicio
+			content: 'Data: ' + evento.data +
+			'<br>Inicio: ' + evento.hr_inicio
 		});
 		infowindow.open(map,marker);
 		
 		marker.addListener('click',function() { 
 			abrir_info(marker.evento_info);
 		});
-		
-		
-	}
 	
 }
 
@@ -71,8 +51,29 @@ function initialize() {
 
     geocoder = new google.maps.Geocoder();
 	
-	addmarkers(map);
+	var i;
+	for(i = 0;i<eventos.length;i++) {
+		addmarker(eventos[i] );
+	}
+	
 }
+
+function get_eventos() {
+	
+	var xmlhttp = new XMLHttpRequest();
+	var url = "get_eventos.php";
+
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			eventos = JSON.parse(xmlhttp.responseText);
+			initialize();
+		}
+	};
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+	
+}
+
 
 $(document).ready(function () {
 
