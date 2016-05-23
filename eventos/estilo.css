@@ -47,7 +47,7 @@ h1 {
 	display: block;
 	float: left;
 	font: 15px 'Open Sans',Arial; 
-	height: 16px;
+	height: 30px;
 	padding: 9px;
 	width: 475px; 
 		border:2px;
@@ -58,7 +58,7 @@ h1 {
 	border-radius: 0 6px 6px 0;
     color: #FFF;
     cursor: pointer;
-    height: 34px;
+    height: 30px;
     font: 15px 'Open Sans',Arial;
     padding: 2px 13px 6px;
     width: 150px;
