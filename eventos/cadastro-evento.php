@@ -57,7 +57,7 @@ if(isset($_POST['nome']))
 		<h2>Cadastro Realizado com sucesso</h2>
 		<div class="row"> 
 			<div class="column6"> 
-				<a href="mapa.html" class="button">Abrir Mapa</a>
+				<a href="mapa_eventos.html" class="button">Abrir Mapa</a>
 			</div>
 		</div>		
     </div>
