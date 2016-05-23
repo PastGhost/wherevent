@@ -66,7 +66,7 @@ if(isset($_POST['cadastrar']))
 					<label>E-mail</label>
 					<input type="email" name="email" class="form-control form-group">
 
-					<label>password</label>
+					<label>Password</label>
 					<input type="password" name="pwd" class="form-control form-group">
 					<label>Nome</label>
 					<input type="text" name="nome" class="form-control form-group">
