@@ -27,46 +27,81 @@ if(isset($_POST['cadastrar']))
 <html>
 <head>
 	<title>Wherevent | Cadastro de Promotor</title>
+	<meta charset="UTF-8">
+
+	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <form method="POST" action="">
 
-	<label>E-mail</label>
-	<input type="email" name="email">
 
-	<label>password</label>
-	<input type="password" name="pwd">
-	<label>Nome</label>
-	<input type="text" name="nome">
+<header>
+	<div id="header-wrapper">
+	    <div id="header" class="container">
+	        <div id="logo">
+				<a href="index.html"><img src="../../images/LOGO%20WHEREVENT.png"></a>
+	        </div>
+	    </div>
+	</div>
 
-	<label>Sobrenome</label>
-	<input type="text" name="sobrenome">
+	<ul class="nav nav-pills nav-justified thumbnail setup-panel">
+	  <li class="active">
+	    <a href="#step-1">
+	    <h4 class="list-group-item-heading">Dados pessoais</h4>
+	    <p class="list-group-item-text">Preencha seus dados</p></a>
+	  </li>
+	  <li>
+	    <a href="#step-1">
+	    <h4 class="list-group-item-heading">Experiência</h4>
+	    <p class="list-group-item-text">Preencha suas experiências e seu diferencial</p></a>
+	  </li>
+	</ul>
+</header>
 
-	<label>CPF</label>
-	<input type="number" name="cpf_cnpj">
+<section>
+	<div class="container">
+		<div class="row">
+    		<div class="col-md-6">
+    			<div class="col-xs-12">
+					<label>E-mail</label>
+					<input type="email" name="email" class="form-control form-group">
 
-	<label>Celular</label>
-	<input type="number" name="cel">
+					<label>password</label>
+					<input type="password" name="pwd" class="form-control form-group">
+					<label>Nome</label>
+					<input type="text" name="nome" class="form-control form-group">
 
-	<label>Telefone</label>
-	<input type="text" name="tel">
+					<label>Sobrenome</label>
+					<input type="text" name="sobrenome" class="form-control form-group">
 
-	<label>Experiencia</label>
-	<input type="textarea" name="exp">
+					<label>CPF</label>
+					<input type="number" name="cpf_cnpj" class="form-control form-group">
 
-	<label>Experiencia</label>
-	<textarea rows="4" cols="50" name="exp"></textarea> 
+					<label>Celular</label>
+					<input type="number" name="cel" class="form-control form-group">
 
-	<label>Equipamentos</label>
-	<textarea rows="4" cols="50" name="equip"></textarea> 
+					<label>Telefone</label>
+					<input type="text" name="tel" class="form-control form-group">
+
+					<label>Experiencia</label>
+					<input type="textarea" name="exp" class="form-control form-group">
+
+					<label>Experiencia</label>
+					<textarea rows="4" cols="50" name="exp" class="form-control form-group"></textarea> 
+
+					<label>Equipamentos</label>
+					<textarea rows="4" cols="50" name="equip" class="form-control form-group"></textarea> 
 
 
 
-
-	<input type="submit" name="cadastrar" value="Cadastrar">
-
+	<input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary btn-lg">
+	</div>
+	</div></div></div>
+</section>
 
 
 </form>
+
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
