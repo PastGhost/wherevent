@@ -9,14 +9,12 @@
 		}
 		if($i == $n) {
 			$login =  false;
-			echo 'error';
 		} 
 		else if($password == $usuarios[$i]->password) {
 			session_start();
 			$id_user = $usuarios[$i]->id;
 			$_SESSION["id_user"] = $id_user;
 			$login =  true;
-			echo 'success';
 		}
 		return $login;
 	}
@@ -28,10 +26,10 @@
 		$email = $_POST['email'];
 		$logado = login($email,$password);
 		if($logado == true) {
-			echo 'ok';
-			//header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
+			echo '<script>alert("Logado com sucesso!")</script>';
+			header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
 		} else {
-			echo 'error';
+			echo '<script>alert("Erro ao logar")</script>';
 		}
 	}
 ?>
