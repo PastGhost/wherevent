@@ -22,7 +22,7 @@
 		$tst = true;
 		$password = $_POST['password'];
 		$email = $_POST['email'];
-		$logado = login($email,$password);
+		$logado = 'login($email,$password)';
 		if($logado) {
 			header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
 		} else {
