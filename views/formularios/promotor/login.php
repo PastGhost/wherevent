@@ -39,6 +39,9 @@
 		if($logado) echo '<script>alert("E-mail ou senha incorretos")</script>';
 		
 	}
+	if($logado) {
+		 echo '<script>alert("Logado com Sucesso!")</script>';
+	}
 	?>
 
 	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
