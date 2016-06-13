@@ -26,7 +26,7 @@
 		$tst = true;
 		$password = $_POST['pwd'];
 		$email = $_POST['email'];
-		$logado = 'login($email,$password)';
+		$logado = login($email,$password);
 		if($logado == true) {
 			echo 'ok';
 			//header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
