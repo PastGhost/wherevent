@@ -5,8 +5,11 @@ html, body
 	padding:0;
 }
 
-#logo{
-	margin-top:2px;
+
+#logo
+{
+	position: absolute;
+	top: 0em;
 }
 body {
 	margin:0;
