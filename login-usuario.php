@@ -33,7 +33,7 @@
 	<title>Wherevent | Cadastro de Promotor</title>
 	<meta charset="UTF-8">
 	<?php
-	echo '<script>alert("E-mail ou senha incorretos")</scrit>';
+	echo '<script>alert("E-mail ou senha incorretos")</script>';
 	?>
 
 	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
