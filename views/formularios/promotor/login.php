@@ -24,7 +24,8 @@
 		$email = $_POST['email'];
 		$logado = 'login($email,$password)';
 		if($logado) {
-			header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
+			echo 'ok';
+			//header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
 		} else {
 			echo 'error';
 		}
