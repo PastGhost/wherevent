@@ -20,7 +20,7 @@
 	$tst = false;
 	if(isset($_POST['login'])) {
 		$tst = true;
-		$password = $_POST['password'];
+		$password = $_POST['pwd'];
 		$email = $_POST['email'];
 		$logado = 'login($email,$password)';
 		if($logado) {
