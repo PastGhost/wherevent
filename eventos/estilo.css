@@ -30,25 +30,24 @@ h1 {
 .campos label { 
 	background: #333; 
 	border-radius: 6px 0 0 6px; 
-	color: ##2F4F4F; 
+	color: #f0f0f0; 
 	cursor: pointer; 
 	display: block; 
-	border-color:#DCDCDC;
-	height: 30px; 
+	height: 20px; 
 	float: left; 
 	font: 15px 'Open Sans',Arial;
 	padding: 7px 13px;
-	width: 100px;
+	width: 70px;
 	border:2px;
 }
 
 .campos input[type="text"] { 
-	color: #191970;
-	background:#DCDCDC;
+	background: #FFF;
+	color: #666;
 	display: block;
 	float: left;
 	font: 15px 'Open Sans',Arial; 
-	height: 30px;
+	height: 16px;
 	padding: 9px;
 	width: 475px; 
 		border:2px;
