@@ -71,9 +71,10 @@ h1 {
 }
 
 .campos input[type="button"]:hover { background: #12587C ;
-border-color:gray;
 	
 }
+
+#txtEndereco{border-color:gray};
 
 #mapa { 
 	width: 940px;
