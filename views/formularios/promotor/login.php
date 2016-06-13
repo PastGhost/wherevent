@@ -18,7 +18,7 @@
 	}
 	$logado = false;
 	$tst = false;
-	if(isset($_POST['password'])) {
+	if(isset($_POST['login'])) {
 		$tst = true;
 		$password = $_POST['password'];
 		$email = $_POST['email'];
