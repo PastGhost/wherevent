@@ -31,11 +31,8 @@ class User
 		array_push($filePhp, $dadosCadastro);
 
 		//Escrevendo o array dos dados do usuário no arquivo Json
-<<<<<<< HEAD
 		$writeFile = file_put_contents('../../../dados_json/user.json', json_encode($filePhp));
-=======
 		file_put_contents('../../../dados_json/user.json', json_encode($filePhp));
->>>>>>> 3e372451c1a5dd8fa3bd65f32682408e978a8cfd
 
 		return $this->id_user;
 	}
