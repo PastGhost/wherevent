@@ -43,9 +43,7 @@ h1 {
 }
 
 .campos input[type="text"] { 
-	background: #DCDCDC;
 	color: #000000;
-	border-color:#DCDCDC;
 	display: block;
 	float: left;
 	font: 15px 'Open Sans',Arial; 
