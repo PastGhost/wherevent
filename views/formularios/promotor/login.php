@@ -25,8 +25,9 @@
 		$logado = login($email,$password);
 		if($logado) {
 			header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
-			die();
-		};
+		} else {
+			echo 'error';
+		}
 	}
 ?>
 <!DOCTYPE html>
