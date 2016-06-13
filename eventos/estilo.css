@@ -108,6 +108,10 @@ input[type="submit"] {
     transition: background .2s ease-in;
 }
 
+#txtEndereco{
+	color:#DCDCDC;
+}
+
 input[type="submit"]:hover { background: #12587C }
 
 .autores { background: #e5e3df; bottom: 0; border-radius: 5px 5px 0 0; padding: 5px 10px; position: fixed; left: 38%; width: 345px }
