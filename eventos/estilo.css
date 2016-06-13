@@ -43,8 +43,8 @@ h1 {
 
 .campos input[type="text"] { 
 	
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
 	border-color: #DCDCDC;
 	display: block;
 	float: left;
