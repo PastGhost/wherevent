@@ -17,7 +17,9 @@
 		return $login;
 	}
 	$logado = false;
+	$tst = false;
 	if(isset($_POST['password'])) {
+		$tst = true;
 		$password = $_POST['password'];
 		$email = $_POST['email'];
 		$logado = login($email,$password);
@@ -33,7 +35,10 @@
 	<title>Wherevent | Cadastro de Promotor</title>
 	<meta charset="UTF-8">
 	<?php
-	echo '<script>alert("E-mail ou senha incorretos")</script>';
+	if($tst) { 
+		if($logado) echo '<script>alert("E-mail ou senha incorretos")</script>';
+		
+	}
 	?>
 
 	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
