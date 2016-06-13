@@ -21,7 +21,10 @@
 		$password = $_POST['password'];
 		$email = $_POST['email'];
 		$logado = login($email,$password);
-		if($logado) echo "Sucesso<br>";
+		if($logado) {
+			header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
+			die();
+		};
 	}
 ?>
 <!DOCTYPE html>
