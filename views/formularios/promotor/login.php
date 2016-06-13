@@ -1,7 +1,7 @@
 <?php
 	$logado = false;
 	function login($email,$password) {
-		$usuarios = json_decode(file_get_contents("users.json"));
+		$usuarios = json_decode(file_get_contents("../../../dados_json/users.json"));
 		$n = count($usuarios);
 		$i = 0;
 		while($email != $usuarios[$i]->email && $n > $i) $i++;
