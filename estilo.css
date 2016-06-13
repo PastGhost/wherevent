@@ -70,7 +70,11 @@ h1 {
     transition: background .2s ease-in;
 }
 
-.campos input[type="button"]:hover { background: #12587C }
+.campos input[type="button"]:hover { background: #12587C ;
+	
+}
+
+#pesquisa{color:gray};
 
 #mapa { 
 	width: 940px;
@@ -78,6 +82,7 @@ h1 {
 	border: 10px solid #ccc;;
 	margin-bottom: 20px;
 }
+
 
 input[type="submit"] {
 	background: #2679A5; 
@@ -88,7 +93,8 @@ input[type="submit"] {
     margin: 0 auto;
     font: 20px 'Open Sans',Arial;
     padding: 7.5px 15px;
-    width: 250px;
+    width: 230px;
+    border-color:gray;
 
     -webkit-transition: background .2s ease-in;
     -moz-transition: background .2s ease-in;

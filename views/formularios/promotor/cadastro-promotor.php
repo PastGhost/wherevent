@@ -37,7 +37,7 @@ if(isset($_POST['cadastrar']))
 	<div id="header-wrapper">
 	    <div id="header" class="container">
 	        <div id="logo">
-				<a href="index.html"><img src="../../images/LOGO%20WHEREVENT.png"></a>
+				<a href="http://wherevent.azurewebsites.net/"><img src="../../images/LOGO%20WHEREVENT.png"></a>
 	        </div>
 	    </div>
 	</div>

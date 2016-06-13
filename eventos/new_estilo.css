@@ -4,6 +4,17 @@ html, body
 	margin:0;
 	padding:0;
 }
+
+
+
+#logo
+{
+	position: absolute;
+	top: -1em;
+	left: -3em;
+	width: 100%;
+}
+
 body {
 	margin:0;
 	padding:0;

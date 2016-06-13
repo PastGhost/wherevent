@@ -17,10 +17,52 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"/>
+    
     <link href="default.css" rel="stylesheet" type="text/css" media="all" />
     <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="shortcut icon" href="views/images/icon.ico" >
     
+
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
     
     <!--
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
@@ -38,7 +80,14 @@
         </div>
         <div id="menu">
           <ul>
-            <li><a href="views/web-site/menu-cadastro.html">Cadastrar Usuário</a></li>
+            <li>
+                <div class="dropdown">
+  <button class="dropbtn">CADASTRE-SE</button>
+  <div class="dropdown-content">
+    <a href="http://wherevent.azurewebsites.net/views/formularios/promotor/cadastro-promotor.php">PROMOTOR</a>
+    <a href="http://wherevent.azurewebsites.net/views/formularios/profissional/cadastro-profissional.php">PROFISSIONAL</a>
+  </div>
+</div>
             <li><a href="eventos/formulario-evento.html">Cadastrar Evento</a></li>
          
           </ul>
@@ -46,32 +95,31 @@
       </div>
     </div>
     <div id="header-featured"> </div>
-
-   <div id="wrapper">
+    <div id="wrapper">
       <div id="featured-wrapper">
         <div id="featured" class="container">
           <div class="column1"> 
-            <span class="icon icon-map-marker"></span>
-             <div class="title">
+             <div>
               <h2>Cadastre seu evento</h2>
             </div>
             <p></p>
           </div>
-          <div class="column2"> <span class="icon icon-map-marker"></span>
-            <div class="title">
+          <div class="column2">
+            <div>
               <h2>Visualize eventos ao seu redor</h2>
             </div>
             <p></p>
           </div>
-          <div class="column3"> <span class="icon icon-eye-open"></span>
-            <div class="title">
+          <div class="column3"> 
+          
+            <div>
               <h2>Encontre a oportunidade de trabalho certa pra você</h2>
             </div>
             <p></p>
           </div>
-          <div class="column4"> <span class="icon icon-group"></span>
-            <div class="title">
-              <h2>Estabeleça relações profissionais positivas</h2>
+          <div class="column4">
+            <div>
+              <h2>Estabeleça relações profissionais duradouras</h2>
             </div>
             <p></p>
           </div>
@@ -90,7 +138,7 @@
         <div class="row">    
             <div class="column6">
                 
-                <a href="eventos/mapa.html" class="button">Abrir Mapa</a>
+                <a href="http://wherevent.azurewebsites.net/eventos/mapa_eventos.html" class="button">Abrir Mapa</a>
             </div>
        </div>
     </div>
