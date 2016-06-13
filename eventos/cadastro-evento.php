@@ -41,7 +41,7 @@ if(isset($_POST['nome']))
     <div id="header-wrapper">
 		<div id="header" class="container">
 			<div id="logo">
-            <a href="index.html"><img src="../views/images/LOGO%20WHEREVENT.png"></a>
+            <a href="http://wherevent.azurewebsites.net/"><img src="../views/images/LOGO%20WHEREVENT.png"></a>
 			</div>
 			<div id="menu">
 				<ul>
