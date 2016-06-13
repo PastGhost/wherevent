@@ -70,7 +70,10 @@ h1 {
     transition: background .2s ease-in;
 }
 
-.campos input[type="button"]:hover { background: #12587C }
+.campos input[type="button"]:hover { background: #12587C ;
+border-color:gray;
+	
+}
 
 #mapa { 
 	width: 940px;
@@ -78,9 +81,7 @@ h1 {
 	border: 10px solid #ccc;;
 	margin-bottom: 20px;
 }
-#pesquisa { 
-border-color: gray;
-}
+
 
 input[type="submit"] {
 	background: #2679A5; 
