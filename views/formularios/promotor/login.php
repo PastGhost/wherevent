@@ -9,12 +9,14 @@
 		}
 		if($i == $n) {
 			$login =  false;
+			echo 'error';
 		} 
 		else if($password == $usuarios[$i]->password) {
 			session_start();
 			$id_user = $usuarios[$i]->id;
 			$_SESSION["id_user"] = $id_user;
 			$login =  true;
+			echo 'success';
 		}
 		return $login;
 	}
@@ -25,7 +27,7 @@
 		$password = $_POST['pwd'];
 		$email = $_POST['email'];
 		$logado = 'login($email,$password)';
-		if($logado) {
+		if($logado == true) {
 			echo 'ok';
 			//header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
 		} else {
@@ -38,15 +40,6 @@
 <head>
 	<title>Wherevent | Cadastro de Promotor</title>
 	<meta charset="UTF-8">
-	<?php
-	if($tst) { 
-		if($logado) echo '<script>alert("E-mail ou senha incorretos")</script>';
-		
-	}
-	if($logado) {
-		 echo '<script>alert("Logado com Sucesso!")</script>';
-	}
-	?>
 
 	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
