@@ -1,5 +1,5 @@
 <?php
-
+	$logado = false;
 	function login($email,$password) {
 		$usuarios = json_decode(file_get_contents("users.json"));
 		$n = count($usuarios);
@@ -32,6 +32,9 @@
 <head>
 	<title>Wherevent | Cadastro de Promotor</title>
 	<meta charset="UTF-8">
+	<?php
+	echo '<script>alert("E-mail ou senha incorretos")</scrit>';
+	?>
 
 	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
