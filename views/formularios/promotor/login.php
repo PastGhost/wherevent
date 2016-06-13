@@ -1,6 +1,7 @@
 <?php
+	$logado = false;
 	function login($email,$password) {
-		$usuarios = json_decode(file_get_contents("dados_json/users.json"));
+		$usuarios = json_decode(file_get_contents("users.json"));
 		$n = count($usuarios);
 		$i = 0;
 		while($email != $usuarios[$i]->email && $n > $i) $i++;
@@ -20,7 +21,10 @@
 		$password = $_POST['password'];
 		$email = $_POST['email'];
 		$logado = login($email,$password);
-		if($logado) echo "Sucesso<br>";
+		if($logado) {
+			header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
+			die();
+		};
 	}
 ?>
 <!DOCTYPE html>
@@ -28,6 +32,9 @@
 <head>
 	<title>Wherevent | Cadastro de Promotor</title>
 	<meta charset="UTF-8">
+	<?php
+	echo '<script>alert("E-mail ou senha incorretos")</script>';
+	?>
 
 	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
