@@ -50,11 +50,7 @@ if(isset($_POST['cadastrar']))
 	    <h4 class="list-group-item-heading">Dados pessoais</h4>
 	    <p class="list-group-item-text">Preencha seus dados</p></a>
 	  </li>
-	  <li>
-	    <a href="#step-1">
-	    <h4 class="list-group-item-heading">Experiência</h4>
-	    <p class="list-group-item-text">Preencha suas experiências e seu diferencial</p></a>
-	  </li>
+	  
 	</ul>
 </header>
 
@@ -83,8 +79,7 @@ if(isset($_POST['cadastrar']))
 					<label>Telefone</label>
 					<input type="text" name="tel" class="form-control form-group">
 
-					<label>Experiencia</label>
-					<input type="textarea" name="exp" class="form-control form-group">
+					
 
 					<label>Experiencia</label>
 					<textarea rows="4" cols="50" name="exp" class="form-control form-group"></textarea> 
