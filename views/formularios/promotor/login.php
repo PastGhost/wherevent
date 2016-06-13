@@ -4,7 +4,9 @@
 		$usuarios = json_decode(file_get_contents("../../../dados_json/user.json"));
 		$n = count($usuarios);
 		$i = 0;
-		while($email != $usuarios[$i]->email && $n > $i) $i++;
+		while($email != $usuarios[$i]->email && $n > $i) {
+			$i++;
+		}
 		if($i == $n) {
 			$login =  false;
 		} 
