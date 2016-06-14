@@ -6,6 +6,7 @@ class User
 	public $id_user;
 	public $email;
 	public $password;
+	public $adress;
 
 	function Cadastrar($email, $password, $tipo)
 	{
@@ -32,10 +33,37 @@ class User
 
 		//Escrevendo o array dos dados do usuário no arquivo Json
 		$writeFile = file_put_contents('../../../dados_json/user.json', json_encode($filePhp));
-		file_put_contents('../../../dados_json/user.json', json_encode($filePhp));
 
 		return $this->id_user;
+	
 	}
+
+	function Login($email,$password) {
+
+			$login = false;
+			$usuarios = json_decode(file_get_contents("../../dados_json/user.json"));
+			$n = count($usuarios);
+			$i = 0;
+
+			while( $email != $usuarios[$i]->email && $n > $i) $i++;
+		
+			if($i == $n) {
+			
+				$login =  false;
+			
+			} 
+		
+			else if($password == $usuarios[$i]->password) {
+			
+				session_start();
+				$id_user = $usuarios[$i]->id;
+				$_SESSION["id_user"] = $id_user;
+				$login =  true;
+			
+			}
+			
+			return $login;
+		}
 
 }
 class Promotor

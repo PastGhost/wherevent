@@ -1,36 +1,29 @@
 <?php
-	$logado = false;
-	function login($email,$password) {
-		$usuarios = json_decode(file_get_contents("../../../dados_json/user.json"));
-		$n = count($usuarios);
-		$i = 0;
-		while($email != $usuarios[$i]->email && $n > $i) {
-			$i++;
-		}
-		if($i == $n) {
-			$login =  false;
-		} 
-		else if($password == $usuarios[$i]->password) {
-			session_start();
-			$id_user = $usuarios[$i]->id;
-			$_SESSION["id_user"] = $id_user;
-			$login =  true;
-		}
-		return $login;
-	}
-	$logado = false;
-	$tst = false;
+	include('../../classes/classes_usuarios.php');
+	
+	$logado = true;
+	
 	if(isset($_POST['login'])) {
-		$tst = true;
+
+		$usuario = new User();
+		$logado = false;
 		$password = $_POST['pwd'];
 		$email = $_POST['email'];
-		$logado = login($email,$password);
-		if($logado == true) {
-			echo '<script>alert("Logado com sucesso!")</script>';
+		$logado = $usuario->Login($email,$password);
+	
+		if($logado) {
+	
 			header("Location: http://wherevent.azurewebsites.net/views/dashboard/index.html");
-		} else {
-			echo '<script>alert("Erro ao logar")</script>';
+	
+		} 
+		
+		else {
+
+			$logado = false;
+			//echo '<script>alert("Erro ao logar")</script>';
+	
 		}
+	
 	}
 ?>
 <!DOCTYPE html>
@@ -39,7 +32,8 @@
 	<title>Wherevent | Cadastro de Promotor</title>
 	<meta charset="UTF-8">
 
-	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 <form method="POST" action="">
@@ -49,7 +43,7 @@
 	<div id="header-wrapper">
 	    <div id="header" class="container">
 	        <div id="logo">
-				<center></center><a href="http://wherevent.azurewebsites.net/"><img src="../../images/LOGO%20WHEREVENT.png"></a></center>
+				<center></center><a href="http://wherevent.azurewebsites.net/"><img src="../images/LOGO%20WHEREVENT.png"></a></center>
 	        </div>
 	    </div>
 	</div>
@@ -68,6 +62,9 @@
 		<div class="row">
     		<div class="col-md-6">
     			<div class="col-xs-12">
+				<?php
+					if(!($logado)) echo '<p>Senha ou Email incorretos</p>';
+				?>
 				<form method="POST" action="">
 					<label>E-mail</label>
 					<input type="email" name="email" class="form-control form-group">
@@ -84,6 +81,6 @@
 
 </form>
 
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 </html>

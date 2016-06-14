@@ -92,16 +92,5 @@ $(document).ready(function () {
 			map.setZoom(16);
 		}
 	});
-	
-	/*$("form").submit(function(event) {
-		event.preventDefault();
-		
-		var endereco = $("#txtEndereco").val();
-		var latitude = $("#txtLatitude").val();
-		var longitude = $("#txtLongitude").val();
-		
-		alert("Endereço: " + endereco + "\nLatitude: " + latitude + "\nLongitude: " + longitude);
-	});
-	*/
 
 });
